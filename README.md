@@ -1,5 +1,4 @@
-<h1 align="center">Yo, im KillaMeep</h1>
-<h3 align="center">A pretty shitty coder lmao</h3>
+<h3 align="center"><3</h3>
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=killameep&label=Profile%20views&color=b40e0e&style=flat" alt="killameep" /> </p>
 
