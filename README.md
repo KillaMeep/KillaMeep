@@ -1,18 +1,15 @@
 
 
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:8a2be2,50:00bfff,100:ff1493&height=200&section=header&text=KillaMeep&fontSize=80&fontColor=0d1117&animation=fadeIn&fontAlignY=38" width="100%" alt="header" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:ff1493,50:00bfff,100:8a2be2&height=120&section=header" width="100%" alt="header" />
 </div>
 
 
 <div align="center">
 
-  ![Profile Views](https://komarev.com/ghpvc/?username=killameep&color=8a2be2&style=for-the-badge&label=PROFILE+VIEWS)
-
-  <br/>
 
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=600&size=24&duration=3000&pause=1000&color=00BFFF&center=true&vCenter=true&repeat=true&random=false&width=700&height=35&lines=Full-Stack+Developer+%7C+ML+Architect+%7C+Automation+Engineer" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=600&size=22&duration=4500&pause=1500&color=00BFFF&center=true&vCenter=true&repeat=true&random=false&width=750&height=32&lines=Full-Stack+Dev+%7C+AI%2FML+Architect+%7C+Automation+Engineer" alt="Typing SVG" />
   </a>
 
 </div>
@@ -22,24 +19,7 @@
 
 <div align="center">
 
-```
-┌──────────────────────────────────────────────────────────┐
-│  killameep@github:~$                                     │
-├──────────────────────────────────────────────────────────┤
-│                                                          │
-│  > whoami                                                │
-│    KillaMeep                                             │
-│                                                          │
-│  > cat interests.txt                                     │
-│    Desktop Apps · Machine Learning                       │
-│    Automation Programming · ASCII Art                    │
-│    Open Source · Game Hacking                            │
-│                                                          │
-│  > echo $STATUS                                          │
-│    💜 Playing With Buttons                               │
-│                                                          │
-└──────────────────────────────────────────────────────────┘
-```
+**Desktop Apps** · **Machine Learning** · **Automation** · **ASCII Art** · **Open Source** · **Game Hacking**
 
 </div>
 
@@ -116,9 +96,6 @@
   </table>
 </div>
 
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=killameep&layout=compact&langs_count=8&bg_color=0d1117&title_color=00bfff&text_color=e6e6ff&icon_color=8a2be2&border_color=8a2be2&hide_border=false&custom_title=Most+Used+Languages" width="500" alt="Top Languages" />
-</div>
 
 <br/>
 
