@@ -1,18 +1,9 @@
-<!-- ═══════════════════════════════════════════════════════════════════════════
-     🌌  KillaMeep's GitHub Profile  —  Cosmic Cyberpunk Edition
-     ═══════════════════════════════════════════════════════════════════════════ -->
 
-<!-- ╔══════════════════════════════════════════════════════════════╗
-     ║                    ANIMATED HEADER                         ║
-     ╚══════════════════════════════════════════════════════════════╝ -->
 
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:8a2be2,50:00bfff,100:ff1493&height=220&section=header&text=KillaMeep&fontSize=80&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Sometimes%20I%20code%20things.&descSize=18&descColor=e6e6ff&descAlignY=55" width="100%" alt="header" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:8a2be2,50:00bfff,100:ff1493&height=200&section=header&text=KillaMeep&fontSize=80&fontColor=0d1117&animation=fadeIn&fontAlignY=38" width="100%" alt="header" />
 </div>
 
-<!-- ╔══════════════════════════════════════════════════════════════╗
-     ║                   PROFILE VIEWS + TYPING SVG               ║
-     ╚══════════════════════════════════════════════════════════════╝ -->
 
 <div align="center">
 
@@ -21,31 +12,33 @@
   <br/>
 
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=600&size=24&duration=3000&pause=1000&color=00BFFF&center=true&vCenter=true&multiline=true&repeat=true&random=false&width=650&height=100&lines=Full-Stack+Developer+%7C+ML+Enthusiast+%7C+Creative+Coder;Building+cross-platform+desktop+apps+with+Electron;Training+neural+networks+to+play+games;Turning+pixels+into+ASCII+art+since+forever" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=600&size=24&duration=3000&pause=1000&color=00BFFF&center=true&vCenter=true&repeat=true&random=false&width=700&height=35&lines=Full-Stack+Developer+%7C+ML+Architect+%7C+Automation+Engineer" alt="Typing SVG" />
   </a>
 
 </div>
 
 <br/>
 
-<!-- ╔══════════════════════════════════════════════════════════════╗
-     ║                       ABOUT ME                             ║
-     ╚══════════════════════════════════════════════════════════════╝ -->
 
 <div align="center">
 
 ```
-⠀⠀⠀⠀⠀⠀⠀⣀⣤⣤⣤⣤⣤⣀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⣠⣶⣿⣿⣿⣿⣿⣿⣿⣿⣶⣄⠀⠀⠀⠀   > whoami
-⠀⠀⠀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⠀⠀⠀   KillaMeep
-⠀⠀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀⠀
-⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀   > cat interests.txt
-⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀   Desktop Apps • Machine Learning
-⠀⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠀   Creative Coding • ASCII Art
-⠀⠀⠀⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠀⠀   Open Source • Game Hacking
-⠀⠀⠀⠀⠙⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠋⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠈⠛⠿⠿⠿⠿⠛⠁⠀⠀⠀⠀⠀⠀   > echo $STATUS
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀   💜 Playing With Buttons
+┌──────────────────────────────────────────────────────────┐
+│  killameep@github:~$                                     │
+├──────────────────────────────────────────────────────────┤
+│                                                          │
+│  > whoami                                                │
+│    KillaMeep                                             │
+│                                                          │
+│  > cat interests.txt                                     │
+│    Desktop Apps · Machine Learning                       │
+│    Automation Programming · ASCII Art                    │
+│    Open Source · Game Hacking                            │
+│                                                          │
+│  > echo $STATUS                                          │
+│    💜 Playing With Buttons                               │
+│                                                          │
+└──────────────────────────────────────────────────────────┘
 ```
 
 </div>
@@ -66,12 +59,10 @@
 
 <br/>
 
-<!-- ═══════════════════  DIVIDER  ═══════════════════ -->
+
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:8a2be2,50:00bfff,100:ff1493&height=2" width="100%" />
 
-<!-- ╔══════════════════════════════════════════════════════════════╗
-     ║                      TECH STACK                            ║
-     ╚══════════════════════════════════════════════════════════════╝ -->
+
 
 <h2 align="center">🛠️ Tech Stack</h2>
 
@@ -106,12 +97,9 @@
 
 <br/>
 
-<!-- ═══════════════════  DIVIDER  ═══════════════════ -->
+
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:8a2be2,50:00bfff,100:ff1493&height=2" width="100%" />
 
-<!-- ╔══════════════════════════════════════════════════════════════╗
-     ║                  GITHUB STATS ROW                          ║
-     ╚══════════════════════════════════════════════════════════════╝ -->
 
 <h2 align="center">📊 GitHub Analytics</h2>
 
@@ -129,41 +117,21 @@
 </div>
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=killameep&layout=donut&langs_count=8&bg_color=0d1117&title_color=00bfff&text_color=e6e6ff&icon_color=8a2be2&border_color=8a2be2&hide_border=false&custom_title=Most+Used+Languages" width="340" alt="Top Languages" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=killameep&layout=compact&langs_count=8&bg_color=0d1117&title_color=00bfff&text_color=e6e6ff&icon_color=8a2be2&border_color=8a2be2&hide_border=false&custom_title=Most+Used+Languages" width="500" alt="Top Languages" />
 </div>
 
 <br/>
 
-<!-- ═══════════════════  TROPHIES  ═══════════════════ -->
-
-<div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=killameep&theme=discord&no-frame=true&no-bg=true&column=7&margin-w=6" width="100%" alt="Trophies" />
-</div>
-
-<br/>
-
-<!-- ═══════════════════  ACTIVITY GRAPH  ═══════════════════ -->
-
-<div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=killameep&bg_color=0d1117&color=e6e6ff&title_color=00bfff&line=8a2be2&point=ff1493&area=true&area_color=8a2be2&hide_border=true&custom_title=Contribution%20Activity" width="100%" alt="Activity Graph" />
-</div>
-
-<br/>
-
-<!-- ═══════════════════  DIVIDER  ═══════════════════ -->
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:8a2be2,50:00bfff,100:ff1493&height=2" width="100%" />
 
-<!-- ╔══════════════════════════════════════════════════════════════╗
-     ║                   FEATURED PROJECTS                        ║
-     ╚══════════════════════════════════════════════════════════════╝ -->
 
-<h2 align="center">🚀 Featured Projects</h2>
+<h2 align="center">Featured Projects</h2>
 
 <div align="center">
   <table>
     <tr>
       <td width="50%">
-        <h3 align="center">✨ Glyphify</h3>
+        <h3 align="center">Glyphify</h3>
         <div align="center">
           <a href="https://github.com/KillaMeep/Glyphify">
             <img src="https://github-readme-stats.vercel.app/api/pin/?username=killameep&repo=Glyphify&bg_color=0d1117&title_color=00bfff&text_color=e6e6ff&icon_color=8a2be2&border_color=8a2be2&hide_border=false" width="100%" alt="Glyphify" />
@@ -177,7 +145,7 @@
         </div>
       </td>
       <td width="50%">
-        <h3 align="center">🤖 beatblock-AI</h3>
+        <h3 align="center">beatblock-AI</h3>
         <div align="center">
           <a href="https://github.com/KillaMeep/beatblock-AI">
             <img src="https://github-readme-stats.vercel.app/api/pin/?username=killameep&repo=beatblock-AI&bg_color=0d1117&title_color=00bfff&text_color=e6e6ff&icon_color=8a2be2&border_color=8a2be2&hide_border=false" width="100%" alt="beatblock-AI" />
@@ -193,7 +161,7 @@
     </tr>
     <tr>
       <td width="50%">
-        <h3 align="center">🐱 catgpt</h3>
+        <h3 align="center">catgpt</h3>
         <div align="center">
           <a href="https://github.com/KillaMeep/catgpt">
             <img src="https://github-readme-stats.vercel.app/api/pin/?username=killameep&repo=catgpt&bg_color=0d1117&title_color=00bfff&text_color=e6e6ff&icon_color=8a2be2&border_color=8a2be2&hide_border=false" width="100%" alt="catgpt" />
@@ -207,7 +175,7 @@
         </div>
       </td>
       <td width="50%">
-        <h3 align="center">🎨 ASCII-gen</h3>
+        <h3 align="center">ASCII-gen</h3>
         <div align="center">
           <a href="https://github.com/KillaMeep/ASCII-gen">
             <img src="https://github-readme-stats.vercel.app/api/pin/?username=killameep&repo=ASCII-gen&bg_color=0d1117&title_color=00bfff&text_color=e6e6ff&icon_color=8a2be2&border_color=8a2be2&hide_border=false" width="100%" alt="ASCII-gen" />
@@ -226,83 +194,7 @@
 
 <br/>
 
-<!-- ═══════════════════  DIVIDER  ═══════════════════ -->
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:8a2be2,50:00bfff,100:ff1493&height=2" width="100%" />
 
-<!-- ╔══════════════════════════════════════════════════════════════╗
-     ║                    MORE STATS (COLLAPSIBLE)                ║
-     ╚══════════════════════════════════════════════════════════════╝ -->
-
-<h2 align="center">📈 Deep Dive</h2>
-
-<details>
-<summary align="center"><b>🕐 Productivity & Language Breakdown</b></summary>
-<br/>
-<div align="center">
-  <table>
-    <tr>
-      <td>
-        <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=killameep&theme=2077&utcOffset=-5" alt="Productive Time" />
-      </td>
-      <td>
-        <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=killameep&theme=2077" alt="Repos per Language" />
-      </td>
-      <td>
-        <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=killameep&theme=2077" alt="Most Commit Language" />
-      </td>
-    </tr>
-  </table>
-</div>
-</details>
-
-<details>
-<summary align="center"><b>🧊 3D Contribution Calendar</b></summary>
-<br/>
-<div align="center">
-  <img src="./profile-3d-contrib/profile-night-rainbow.svg" width="100%" alt="3D Contributions" />
-  <br/>
-  <sub><i>Generated daily via GitHub Actions — if this doesn't load, trigger the workflow manually.</i></sub>
-</div>
-</details>
-
-<details>
-<summary align="center"><b>📋 Full Profile Summary</b></summary>
-<br/>
-<div align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=killameep&theme=2077" width="100%" alt="Profile Details" />
-</div>
-<br/>
-<div align="center">
-  <table>
-    <tr>
-      <td>
-        <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=killameep&theme=2077" alt="Stats" />
-      </td>
-    </tr>
-  </table>
-</div>
-</details>
-
-<br/>
-
-<!-- ═══════════════════  DIVIDER  ═══════════════════ -->
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:8a2be2,50:00bfff,100:ff1493&height=2" width="100%" />
-
-<!-- ╔══════════════════════════════════════════════════════════════╗
-     ║                     DEV QUOTE                              ║
-     ╚══════════════════════════════════════════════════════════════╝ -->
-
-<div align="center">
-  <br/>
-  <a href="https://github.com/piyushsuthar/github-readme-quotes">
-    <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark&border=true&quoteColor=00bfff&authorColor=ff1493&backgroundColor=0d1117&symbolColor=8a2be2" alt="Dev Quote" />
-  </a>
-  <br/><br/>
-</div>
-
-<!-- ╔══════════════════════════════════════════════════════════════╗
-     ║                    ANIMATED FOOTER                         ║
-     ╚══════════════════════════════════════════════════════════════╝ -->
 
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:ff1493,50:00bfff,100:8a2be2&height=120&section=footer" width="100%" alt="footer" />
