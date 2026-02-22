@@ -44,7 +44,7 @@
 
 
 
-<h2 align="center">🛠️ Tech Stack</h2>
+<h2 align="center">Tech Stack</h2>
 
 <div align="center">
   <table>
@@ -81,13 +81,13 @@
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:8a2be2,50:00bfff,100:ff1493&height=2" width="100%" />
 
 
-<h2 align="center">📊 GitHub Analytics</h2>
+<h2 align="center">GitHub Analytics</h2>
 
 <div align="center">
   <table>
     <tr>
       <td width="50%">
-        <img src="https://github-readme-stats.vercel.app/api?username=killameep&show_icons=true&include_all_commits=true&count_private=true&rank_icon=github&bg_color=0d1117&title_color=00bfff&text_color=e6e6ff&icon_color=8a2be2&border_color=8a2be2&ring_color=ff1493&hide_border=false&custom_title=KillaMeep%27s+Stats" width="100%" alt="GitHub Stats" />
+        <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=killameep&theme=2077" width="100%" alt="Profile Details" />
       </td>
       <td width="50%">
         <img src="https://streak-stats.demolab.com/?user=killameep&background=0d1117&border=8a2be2&stroke=8a2be2&ring=ff1493&fire=ff1493&currStreakNum=00bfff&sideNums=00bfff&currStreakLabel=e6e6ff&sideLabels=e6e6ff&dates=8e9aaf&hide_border=false" width="100%" alt="GitHub Streak" />
