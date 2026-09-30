@@ -8,7 +8,6 @@ an <img> SVG can't load web fonts. Values mirror killameep.com/assets/css/site.c
     python .github/profile-cards/build.py
 """
 
-import hashlib
 import math
 import pathlib
 import random
@@ -416,8 +415,6 @@ PROJECTS = [
 
 
 if __name__ == "__main__":
-    for old in ["btn-site", "btn-contact", "section-projects", "section-activity", "stack", "footer"]:
-        (OUT / f"{old}.svg").unlink(missing_ok=True)
     hero()
     feat, *rest = PROJECTS
     card(feat, W, math.ceil(card_metrics(feat, W)[-1]), 0)
@@ -427,10 +424,3 @@ if __name__ == "__main__":
         for j, p in enumerate(pair):
             card(p, HALF, h, i + j + 1)
 
-    # version the README's image links by content so browsers and GitHub's cache pick up changes
-    readme = ROOT / "README.md"
-    md = readme.read_text(encoding="utf-8")
-    md = re.sub(r'assets/([\w-]+)\.svg(\?v=\w+)?',
-                lambda m: f"assets/{m[1]}.svg?v={hashlib.sha1((OUT / f'{m[1]}.svg').read_bytes()).hexdigest()[:8]}",
-                md)
-    readme.write_text(md, encoding="utf-8")
