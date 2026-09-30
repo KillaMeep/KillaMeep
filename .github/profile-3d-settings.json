@@ -1,0 +1,11 @@
+{
+  "type": "normal",
+  "fileName": "profile-killameep.svg",
+  "backgroundColor": "#07060d",
+  "foregroundColor": "#ece9f7",
+  "strongColor": "#f472b6",
+  "weakColor": "#6e6987",
+  "radarColor": "#a78bfa",
+  "growingAnimation": true,
+  "contribColors": ["#1a1630", "#4c2f8f", "#7c3aed", "#a78bfa", "#f472b6"]
+}
