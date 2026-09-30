@@ -8,7 +8,6 @@ an <img> SVG can't load web fonts. Values mirror killameep.com/assets/css/site.c
     python .github/profile-cards/build.py
 """
 
-import datetime
 import math
 import pathlib
 import random
@@ -232,36 +231,36 @@ def delay(i):
 # ---------------------------------------------------------------- pieces
 
 W = 880
-HALF = 436          # two cards side by side at width="49%"
-PAD = 30
+HALF = 436          # two cards side by side at width="49.5%"
+PAD = 24
+
+STACK = ["Python", "Rust", "TypeScript", "JavaScript", "C#", "PyTorch", "OpenCV", "YOLO",
+         "ONNX", "Tauri", "Electron", "Flask", "Docker", "Linux"]
 
 
 def hero():
-    lede = ("I build tools that see, sort and automate: computer vision and machine learning in "
-            "Python, desktop apps with Electron and Tauri, and the glue code that makes boring "
-            "work disappear.")
-    lines = wrap("sans400", lede, 18, 600)
     x = 40
-    h = 356 + len(lines) * 30 + 48
+    pills = tags_layout(STACK, 12, W - x * 2)
+    pills_h = len(pills) * 27 + (len(pills) - 1) * 6
+    h = 236 + pills_h + 34
     s = Svg("hero", W, h)
-    s.space(n=150)
+    s.space(n=110)
 
-    # logo row, like the site header
-    w = s.text("mono500", "~/", x, 50, 15, VIOLET)
-    s.text("mono500", "killameep", x + w, 50, 15, TEXT)
+    w = s.text("mono400", "$ ", x, 52, 14, PINK, extra=delay(0))
+    s.text("mono400", "whoami", x + w, 52, 14, FAINT, extra=delay(0))
     label = "killameep.com"
-    s.text("mono400", label, W - x - F["mono400"].width(label, 13), 50, 13, FAINT)
+    lw = F["mono400"].width(label, 13)
+    s.text("mono400", label, W - x - 21 - lw, 52, 13, VIOLET)
+    s.arrow(W - x - 15, 41, 15, VIOLET)
 
-    w = s.text("mono400", "$ ", x, 118, 14, PINK, extra=delay(0))
-    s.text("mono400", "whoami", x + w, 118, 14, FAINT, extra=delay(0))
-    s.text("sans500", "Hi, I’m", x, 172, 38, MUTED, ls=-0.02, extra=delay(1))
-    w = s.grad_text("sans700", "KillaMeep", x - 3, 262, 94, ls=-0.045, extra=delay(2))
-    s.text("sans700", ".", x - 3 + w, 262, 94, TEXT, extra=delay(2))
+    w = s.text("sans500", "Hi, I’m ", x, 122, 30, MUTED, ls=-0.02, extra=delay(1))
+    w += s.grad_text("sans700", "KillaMeep", x + w, 122, 62, ls=-0.045, extra=delay(1))
+    s.text("sans700", ".", x + w, 122, 62, TEXT, extra=delay(1))
 
     # role line: typed out and deleted in a loop, like the homepage
-    size, base = 21, 318
-    pw = s.text("mono400", ">", x, base, size, PINK, extra=delay(3))
-    rx = x + pw + 12
+    size, base = 18, 164
+    pw = s.text("mono400", ">", x, base, size, PINK, extra=delay(2))
+    rx = x + pw + 11
     roles = ["Software Developer", "Process Automation Engineer", "AI Solutions Designer"]
     adv = F["mono400"].width("M", size)
     t, events = 0.6, []           # (time, role index, chars shown)
@@ -275,7 +274,7 @@ def hero():
             t += 0.028
         t += 0.35
     total = t
-    s.add(f'<g{delay(3)}>')
+    s.add(f'<g{delay(2)}>')
     for i, r in enumerate(roles):
         cid = s.uid("r")
         ev = [(0, 0)] + [(tt, k) for tt, ii, k in events if ii == i]
@@ -294,51 +293,11 @@ def hero():
           f'repeatCount="indefinite" calcMode="discrete" keyTimes="{kt}" values="{vals}"/></rect></g>')
     s.style.append(".caret{animation:blink 1.1s steps(1) infinite}@keyframes blink{50%{opacity:0}}")
 
-    y = 372
-    for i, line in enumerate(lines):
-        s.text("sans400", line, x, y + i * 30, 18, MUTED, extra=delay(4))
-    s.save()
-
-
-def button(name, label, primary, arrow):
-    size = 14
-    tw = F["mono500"].width(label, size)
-    w = round(20 + tw + (10 + 16 if arrow else 0) + 20)
-    h = 46
-    # every button gets the same vertical room (for the primary glow) so they line up side by side
-    px, py = (14 if primary else 1), 14
-    s = Svg(name, w + px * 2, h + py * 2)
-    x0, y0 = px, py
-    if primary:
-        s.defs.append('<filter id="sh" x="-30%" y="-60%" width="160%" height="220%">'
-                      '<feDropShadow dx="0" dy="8" stdDeviation="9" flood-color="#a78bfa" flood-opacity="0.55"/></filter>')
-        s.add(f'<rect x="{x0}" y="{y0}" width="{w}" height="{h}" rx="{h / 2}" fill="url(#accent)" filter="url(#sh)"/>')
-        color = "#0d0a18"
-    else:
-        s.add(f'<rect x="{x0 + .5}" y="{y0 + .5}" width="{w - 1}" height="{h - 1}" rx="{h / 2}" '
-              f'fill="{CARD}" stroke="{LINE_STRONG}"/>')
-        color = TEXT
-    s.text("mono500", label, x0 + 20, y0 + h / 2 + 5, size, color)
-    if arrow:
-        s.arrow(x0 + 20 + tw + 10, y0 + h / 2 - 8, 16, color)
-    s.save()
-
-
-def section(name, eyebrow, title, grad_word, lede=None):
-    lines = wrap("sans400", lede, 17, 800) if lede else []
-    h = 150 + (len(lines) * 28 + 14 if lines else 0)
-    s = Svg(name, W, h)
-    s.space(n=40)
-    x = 40
-    s.add(f'<rect x="{x}" y="47.5" width="22" height="1" fill="{VIOLET}" opacity="0.7"/>')
-    s.text("mono400", eyebrow, x + 32, 52, 13, VIOLET, ls=0.02)
-    before, after = title.split(grad_word)
-    size, ls, base = 46, -0.035, 110
-    w = s.text("sans600", before, x, base, size, TEXT, ls=ls)
-    w += s.grad_text("sans600", grad_word, x + w, base, size, ls=ls)
-    s.text("sans600", after, x + w, base, size, TEXT, ls=ls)
-    for i, line in enumerate(lines):
-        s.text("sans400", line, x, 150 + i * 28, 17, MUTED)
+    s.text("sans400", "Computer vision, desktop apps, and the glue code that makes boring work disappear.",
+           x, 206, 16, MUTED, extra=delay(3))
+    s.add(f'<g{delay(4)}>')
+    draw_tags(s, pills, x, 236, 12, TEXT, primary=("Python", "Rust"))
+    s.add("</g>")
     s.save()
 
 
@@ -364,7 +323,7 @@ def tags_layout(tags, size, max_w):
 
 
 def draw_tags(s, rows, x, y, size, color, primary=()):
-    ph = round(size * 1.65 + 8)
+    ph = round(size * 1.65 + 7)
     for r, row in enumerate(rows):
         ty = y + r * (ph + 6)
         for t, tx, w in row:
@@ -377,19 +336,20 @@ def draw_tags(s, rows, x, y, size, color, primary=()):
     return len(rows) * ph + (len(rows) - 1) * 6
 
 
+TAG = 11.5
+TAG_H = round(TAG * 1.65 + 7)
+
+
 def card_metrics(p, w):
     inner = w - PAD * 2
-    title_size = 28 if p.get("featured") else 24
-    lines = wrap("sans400", p["text"], 15, min(inner, 72 * 8.1))
-    rows = tags_layout(p["tags"], 12, inner)
-    head = 44 if p.get("icon") else title_size * 1.1
-    body_h = PAD + 20 + 14 + head + 8 + len(lines) * 24.75
-    tags_h = len(rows) * 28 + (len(rows) - 1) * 6
-    return lines, rows, head, title_size, body_h + 16 + tags_h + PAD
+    lines = wrap("sans400", p["text"], 14, min(inner, 740))
+    rows = tags_layout(p["tags"], TAG, inner)
+    tags_h = len(rows) * TAG_H + (len(rows) - 1) * 6
+    return lines, rows, PAD + 36 + 12 + len(lines) * 22 + 14 + tags_h + PAD
 
 
-def card(p, w, h, index, phase):
-    lines, rows, head, title_size, _ = card_metrics(p, w)
+def card(p, w, h, index):
+    lines, rows, _ = card_metrics(p, w)
     s = Svg(p["file"], w, h)
     cid = s.uid("c")
     s.defs.append(f'<clipPath id="{cid}"><rect width="{w}" height="{h}" rx="{RADIUS}"/></clipPath>')
@@ -401,129 +361,67 @@ def card(p, w, h, index, phase):
     s.add(f'<rect x=".5" y=".5" width="{w - 1}" height="{h - 1}" rx="{RADIUS - .5}" fill="none" stroke="{LINE}"/>')
     gid = s.uid("g")
     dur = 9 + index * 0.7
-    s.defs.append(f'<radialGradient id="{gid}" gradientUnits="userSpaceOnUse" cx="{-160}" cy="0" r="220">'
+    phase = 2.3 * index
+    s.defs.append(f'<radialGradient id="{gid}" gradientUnits="userSpaceOnUse" cx="-160" cy="0" r="200">'
                   '<stop offset="0" stop-color="#c4b5fd" stop-opacity="0.6"/><stop offset="1" stop-color="#c4b5fd" stop-opacity="0"/>'
-                  f'<animate attributeName="cx" values="-220;{w + 220}" dur="{dur}s" begin="-{phase}s" repeatCount="indefinite"/>'
-                  f'<animate attributeName="cy" values="0;{h * 0.35};0" dur="{dur * 1.6:.1f}s" begin="-{phase}s" repeatCount="indefinite"/>'
+                  f'<animate attributeName="cx" values="-200;{w + 200}" dur="{dur}s" begin="-{phase}s" repeatCount="indefinite"/>'
+                  f'<animate attributeName="cy" values="0;{h * 0.35:.0f};0" dur="{dur * 1.6:.1f}s" begin="-{phase}s" repeatCount="indefinite"/>'
                   "</radialGradient>")
     s.add(f'<rect x=".5" y=".5" width="{w - 1}" height="{h - 1}" rx="{RADIUS - .5}" fill="none" stroke="url(#{gid})"/>')
 
-    top = PAD + 13
-    s.text("mono400", f"{index:02d}", PAD, top, 13, FAINT)
-    lw = F["mono400"].width("source", 14)
-    ax = w - PAD - 15
-    s.text("mono400", "source", ax - 6 - lw, top + 1, 14, VIOLET)
-    s.arrow(ax, top - 11, 15, VIOLET)
-
-    y = PAD + 20 + 14
+    mid = PAD + 18          # centre line of the header row
     tx = PAD
     if p.get("icon"):
-        s.add(icon_markup(p["icon"], p["file"] + "-", PAD, y, 44))
-        tx += 44 + 14
-        base = y + 22 + title_size * 0.36
-    else:
-        base = y + title_size * 0.86
-    s.text("sans600", p["name"], tx, base, title_size, TEXT, ls=-0.02)
-    y += head + 8
+        s.add(icon_markup(p["icon"], p["file"] + "-", PAD, PAD, 36))
+        tx += 36 + 12
+    size = 22 if p.get("featured") else 20
+    s.text("sans600", p["name"], tx, mid + size * 0.36, size, TEXT, ls=-0.02)
+    lw = F["mono400"].width("source", 13)
+    ax = w - PAD - 14
+    s.text("mono400", "source", ax - 6 - lw, mid + 4.5, 13, VIOLET)
+    s.arrow(ax, mid - 7, 14, VIOLET)
+
+    y = PAD + 36 + 12
     for i, line in enumerate(lines):
-        s.text("sans400", line, PAD, y + 17 + i * 24.75, 15, MUTED)
-    tags_h = len(rows) * 28 + (len(rows) - 1) * 6
-    draw_tags(s, rows, PAD, h - PAD - tags_h, 12, MUTED)
+        s.text("sans400", line, PAD, y + 15 + i * 22, 14, MUTED)
+    tags_h = len(rows) * TAG_H + (len(rows) - 1) * 6
+    draw_tags(s, rows, PAD, h - PAD - tags_h, TAG, MUTED)
     s.save()
 
 
 PROJECTS = [
     dict(file="card-waypoint", name="Waypoint", icon="waypoint.svg", featured=True,
-         url="https://github.com/KillaMeep/waypoint-osint",
-         text="Free, open-source image geolocation. Give it one outdoor photo and it estimates where on "
-              "Earth it was taken: a diffusion model makes coarse guesses, sun position rules out bad ones, "
-              "and matches against real street-level imagery confirm the rest, all on an interactive map. "
-              "It now runs on a native Rust engine, so there’s no Python to install.",
+         text="Free, open-source image geolocation. Give it one outdoor photo and it estimates where on Earth "
+              "it was taken, using a diffusion model, sun position and street-level matching on an interactive "
+              "map. Runs on a native Rust engine, no Python needed.",
          tags=["Tauri", "Rust", "ONNX Runtime", "OSINT", "LightGlue"]),
     dict(file="card-glyphify", name="Glyphify", icon="glyphify.svg",
-         url="https://github.com/KillaMeep/Glyphify",
-         text="A desktop app that turns images and videos into ASCII art. Color or grayscale, a pile of "
-              "character sets (including braille and custom ones), live tuning, and export to TXT, HTML, "
-              "PNG or animated GIF.",
-         tags=["Electron", "JavaScript", "FFmpeg", "Desktop app"]),
+         text="Turns images and videos into ASCII art: color or grayscale, braille and custom character sets, "
+              "live tuning, export to TXT, HTML, PNG or GIF.",
+         tags=["Electron", "JavaScript", "FFmpeg"]),
     dict(file="card-beatblock", name="BeatBlock AI",
-         url="https://github.com/KillaMeep/beatblock-AI",
-         text="Real-time object detection for BeatBlock, a rhythm game by BubbleTabby. Built on YOLOv5 to "
-              "spot in-game elements with low latency for gameplay analysis.",
-         tags=["Python", "YOLOv5", "Computer vision", "Real-time"]),
+         text="Real-time YOLOv5 object detection for the rhythm game BeatBlock, spotting in-game elements "
+              "with low latency for gameplay analysis.",
+         tags=["Python", "YOLOv5", "Computer vision"]),
     dict(file="card-astrospheric", name="Astrospheric for HA",
-         url="https://github.com/KillaMeep/AstrophericIntegration",
-         text="A Home Assistant integration for Astrospheric astronomy weather: seeing, transparency and "
-              "cloud cover sensors, plus custom Lovelace cards with an 81-hour forecast timeline.",
-         tags=["Home Assistant", "TypeScript", "Python", "HACS"]),
+         text="Home Assistant integration for Astrospheric astronomy weather: seeing, transparency and cloud "
+              "sensors, plus custom Lovelace cards.",
+         tags=["Home Assistant", "TypeScript", "HACS"]),
     dict(file="card-multigpu", name="Multi-GPU Batch",
-         url="https://github.com/KillaMeep/sd-multigpu-batch",
-         text="An AUTOMATIC1111 extension that transparently splits image generation across every GPU you "
-              "have, runs the sub-batches in parallel on headless workers and hands back one merged result.",
-         tags=["Python", "Stable Diffusion", "AUTOMATIC1111"]),
+         text="AUTOMATIC1111 extension that splits image generation across all your GPUs in parallel and "
+              "hands back one merged result.",
+         tags=["Python", "Stable Diffusion", "A1111"]),
 ]
-
-SKILLS = [
-    ("languages", ["Python", "Rust", "JavaScript", "TypeScript", "C#", "Lua"], ["Python"]),
-    ("ml + vision", ["OpenCV", "PyTorch", "TensorFlow", "YOLO", "Ultralytics", "ONNX"], []),
-    ("desktop apps", ["Tauri", "Electron"], []),
-    ("web", ["Django", "Flask", "Node.js", "REST APIs"], []),
-    ("tools", ["Git", "Docker", "Bash", "Blender"], []),
-    ("platforms", ["Linux", "Windows", "Cloudflare"], []),
-]
-
-
-def stack():
-    cols, gap, x0 = 3, 14, 40
-    cw = (W - x0 * 2 - gap * (cols - 1)) / cols
-    layouts = [tags_layout(t, 12.5, cw - 44) for _, t, _ in SKILLS]
-    heights = [22 + 13 + 14 + len(r) * 29 + (len(r) - 1) * 6 + 22 for r in layouts]
-    row_h = [max(heights[i:i + cols]) for i in range(0, len(SKILLS), cols)]
-    top = 150
-    h = top + sum(row_h) + gap * (len(row_h) - 1) + 40
-    s = Svg("stack", W, h)
-    s.space(n=70)
-    s.add(f'<rect x="{x0}" y="47.5" width="22" height="1" fill="{VIOLET}" opacity="0.7"/>')
-    s.text("mono400", "stack", x0 + 32, 52, 13, VIOLET, ls=0.02)
-    w = s.text("sans600", "Tools I ", x0, 110, 46, TEXT, ls=-0.035)
-    w += s.grad_text("sans600", "reach for", x0 + w, 110, 46, ls=-0.035)
-    s.text("sans600", ".", x0 + w, 110, 46, TEXT, ls=-0.035)
-    y = top
-    for i, (label, tags, primary) in enumerate(SKILLS):
-        r, c = divmod(i, cols)
-        cx = x0 + c * (cw + gap)
-        cy = top + sum(row_h[:r]) + gap * r
-        ch = row_h[r]
-        s.add(f'<rect x="{fmt(cx + .5)}" y="{fmt(cy + .5)}" width="{fmt(cw - 1)}" height="{ch - 1}" rx="{RADIUS - .5}" '
-              f'fill="rgba(20,17,34,0.62)" stroke="{LINE}"/>')
-        s.text("mono500", label, cx + 22, cy + 22 + 11, 13, VIOLET, ls=0.02)
-        draw_tags(s, layouts[i], cx + 22, cy + 22 + 13 + 14, 12.5, TEXT, primary)
-    s.save()
-
-
-def footer():
-    s = Svg("footer", W, 64)
-    s.space(n=20, glow=False)
-    w = s.text("mono400", f"© {datetime.date.today().year} ", 40, 37, 13, FAINT)
-    s.text("mono400", "KillaMeep", 40 + w, 37, 13, TEXT)
-    label = "github · discord · killameep.com"
-    s.text("mono400", label, W - 40 - F["mono400"].width(label, 13), 37, 13, FAINT)
-    s.save()
 
 
 if __name__ == "__main__":
+    for old in ["btn-site", "btn-contact", "section-projects", "section-activity", "stack", "footer"]:
+        (OUT / f"{old}.svg").unlink(missing_ok=True)
     hero()
-    button("btn-site", "See my projects", True, True)
-    button("btn-contact", "Get in touch", False, False)
-    section("section-projects", "projects", "Things I’ve built.", "built",
-            "Open-source tools, mostly about pixels: desktop apps, computer vision and a little OSINT.")
-    section("section-activity", "activity", "Lately on GitHub.", "GitHub")
     feat, *rest = PROJECTS
-    card(feat, W, math.ceil(card_metrics(feat, W)[-1]), 1, 0)
+    card(feat, W, math.ceil(card_metrics(feat, W)[-1]), 0)
     for i in range(0, len(rest), 2):
         pair = rest[i:i + 2]
         h = math.ceil(max(card_metrics(p, HALF)[-1] for p in pair))
         for j, p in enumerate(pair):
-            card(p, HALF, h, i + j + 2, 2.3 * (i + j + 1))
-    stack()
-    footer()
+            card(p, HALF, h, i + j + 1)
